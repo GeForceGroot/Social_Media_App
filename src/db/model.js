@@ -1,9 +1,9 @@
-const Sequelize = require('sequelize') 
-const {DataTypes} = require('sequelize')
+const Sequelize = require('sequelize')
+const { DataTypes } = require('sequelize')
 const db = new Sequelize('socialmediadb', 'socialuser', 'socialpass', {
     host: 'localhost',
-    dialect: 'mysql' 
-  });
+    dialect: 'mysql'
+});
 
 const COL_ID_DEF = {
     type: DataTypes.INTEGER,
@@ -12,7 +12,7 @@ const COL_ID_DEF = {
 }
 
 const COL_TITLE_DEF = {
-    type : DataTypes.STRING,
+    type: DataTypes.STRING,
     allowNull: false,
     unique: true
 }
@@ -23,26 +23,27 @@ const COL_NAME_DEF = {
     unique: true
 }
 
-const Users = db.define('user',{
-    id : COL_ID_DEF,
-    username : COL_NAME_DEF
+const Users = db.define('user', {
+    id: COL_ID_DEF,
+    username: COL_NAME_DEF
 })
 
-const Posts = db.define('post',{
-    id : COL_ID_DEF,
-    title : COL_TITLE_DEF,
-    body :{
+const Posts = db.define('post', {
+    userId: COL_ID_DEF,
+    title: COL_TITLE_DEF,
+    body: {
         type: DataTypes.TEXT,
-        allowNull : false
-    } 
+        allowNull: false
+    },
+
 })
 
-const Comments = db.define('comments',{
-    id : COL_ID_DEF,
-    title : DataTypes.TEXT('tiny'),
-    body : {
-        type : DataTypes.TEXT,
-        allowNull : true
+const Comments = db.define('comments', {
+    id: COL_ID_DEF,
+    title: DataTypes.TEXT('tiny'),
+    body: {
+        type: DataTypes.TEXT,
+        allowNull: true
     }
 })
 
