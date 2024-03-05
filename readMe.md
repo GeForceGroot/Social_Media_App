@@ -45,3 +45,25 @@ This will show all the posts, also should have followinf filtering support
 2. ** show all comments under a post **
 
 3 ** add a post **
+
+#### Api Documentaion ####
+
+1. *** users ***
+  1.1 `POST / users`
+  create a new user with username and user id
+
+  1.2 `GET / Users/{userid}`
+  get an user with user id
+
+  1.3  `GET/Users/{username}`
+  get a user with username
+
+  #### POST ####
+
+  1. `GET/ posts`
+  get all post by everyone
+
+  2 `POST/post` 
+  create a post with title, userId, post body
+
+
