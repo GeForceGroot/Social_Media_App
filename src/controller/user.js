@@ -1,4 +1,4 @@
-const {Users} = require('../db/model')
+const {db, Users} = require('../db/model')
 const {getRandomName} = require('../utlis/username')
 
 async function createAonUser(id){
@@ -18,6 +18,11 @@ async function getUserByName(username){
     const user = await Users.findOne({where:{username}})
     return user;
 }
+
+
+db.sync();
+
+
 
 
 

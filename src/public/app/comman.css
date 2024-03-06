@@ -1,0 +1,28 @@
+#navbar{
+    position: sticky;
+    top : 0px;
+    background-color: lightblue;
+    z-index: 1;
+    font-weight: 600;
+}
+
+
+#footer{
+    position: sticky;
+    bottom: 0px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: lightblue;
+}
+#content{
+    height: auto;
+    z-index: 2;
+}
+
+#nav-name{
+    position: relative;
+    margin-right: 30px;
+    font-size: 1.3rem;
+    color: black;
+    font-weight: bold;
+}

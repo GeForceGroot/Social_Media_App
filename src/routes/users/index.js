@@ -1,13 +1,13 @@
-const {Router} = require('express')
+const {Router, urlencoded} = require('express')
 const {getUserByName, getUserById, createAonUser} = require('../../controller/user')
-
 const route = Router();
+route.use(urlencoded({extended:true}))
 
 
 route.get('/:id',async (req, res)=>{
     let user;
     if(isNaN(parseInt(req.params.id))){
-        user = await getUserByName(req.params.id);
+        user = await getUserById(req.params.id);
     }else{
         user = await getUserByName(req.params.id);
     }

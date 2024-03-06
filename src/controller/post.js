@@ -1,4 +1,4 @@
-const {Posts, Users} = require('../db/model')
+const {Posts, Users, db} = require('../db/model')
 
 async function createNewPost(userid, title, body){
     try {
@@ -23,6 +23,7 @@ async function showAllPosts(query){
      console.error(error)   
     }
 }
+db.sync();
 
 
 module.exports = {

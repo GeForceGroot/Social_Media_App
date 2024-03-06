@@ -7,18 +7,20 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#" data-component="all-artical">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#" data-component="write-post">Create Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <a class="nav-link" href="#" data-component="all-artical">My Posts</a>
           </li>
         </ul>
       </div>
+      <div id="nav-name" class="fa-duotone fa-user">name</div>
     </div>
   </nav>
+
+  <script defer src="../js/navbar.js"></script>
+  <script>loggedInUser()</script>
+  

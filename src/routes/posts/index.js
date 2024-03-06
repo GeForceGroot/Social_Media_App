@@ -1,5 +1,6 @@
 const {Router, urlencoded} = require('express')
 const {createNewPost, showAllPosts} = require('../../controller/post')
+const {db} = require('../../db/model')
 const route = Router();
 route.use(urlencoded({extended:true}))
 
@@ -13,8 +14,10 @@ route.post('/', async(req, res)=>{
     const title = req.body.title
     const body = req.body.body
     const post = await createNewPost(id, title, body);
+    db.sync();
     res.status(201).send(post);
 })
+
 
 module.exports = {
      postRoute : route
